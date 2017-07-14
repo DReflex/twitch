@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+
+    <title>Twitch TV</title>
+  </head>
+  <body>
+    <div class="box">
+      <div class="title">
+
+      </div>
+      <div class="options">
+      <button id="all"  type="button" name="button" onclick="all();">all</button>
+      <button id="online" type="button" name="button">online</button>
+      <button id="offline" type="button" name="button">offline</button>
+      </div>
+      <div class="search">
+        <input id="search" type="text" name="search" value="" placeholder="search"> <button id="go" class="btn btn-info" type="button" name="button">GO</button>
+      </div>
+      <div id="results" class="streams">
+
+
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+body{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  width:100%;
+  background-image: url(http://imgur.com/6IT3xPG.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+.box{
+margin:auto;
+width:50%;
+display: flex;
+justify-content: center;
+flex-direction: column;
+background-color: rgba(1, 6, 37, 0.64);
+margin-top: 40px;
+}
+.title{
+  margin:auto;
+  width:200px;
+  height: 150px;
+  text-align: center;
+  background-image: url(https://res.cloudinary.com/dsh8uhpna/image/upload/v1445873890/twitchtv_logo_zm5out.jpg);
+  background-size: contain;
+  border-radius: 30%;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.options{
+margin:auto;
+margin-bottom: 30px;
+}
+.search{
+  margin: auto;
+}
+.streams{
+  margin:auto;
+  text-align: center;
+  border-radius: 20px;
+  color:rgb(139, 226, 14);
+  font-size: 20px;
+}
+hr{
+  height:1px;
+  border-top: 1px solid rgb(30, 31, 45);
+  }
+.streams img {
+  margin: auto;
+  max-width: 200px;
+  margin-top: 20px;
+}
+
+button{
+  border-radius: 20px;
+  background-color: rgb(154, 12, 12);
+  border: 2px solid rgb(180, 158, 11);
+  background-color: rgb(64, 196, 57);
+}
+.offline{
+  color:rgb(148, 1, 1);
+}
+.offline img{
+  filter: grayscale(100%);
+}
+@media screen and (max-width: 450px){
+  .box{
+    width:90%;
+  }
+}
