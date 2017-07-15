@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  var streams =["imaqtpie", "imls", "eulcs1", "septiess", "ESL_SC2"];
+  var streams =["imaqtpie", "imls", "eulcs1", "septiess", "ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
   function Load (channels, bool){
     $("#results").empty();
     channels.forEach(function(channel){
@@ -45,7 +45,6 @@ $(document).ready(function(){
             }
             $("#results").append('<div class= "'+ status + '">'+ image +'<br><p>'+ uStatus+ '</p><br><a  href="' + stream.url + '" target = "_blank"><p>'+ channel +'</p></a><hr></div>')
             if(bool == "true"){
-              console.log('online');
               $(".offline").remove();
             }
             else if (bool == "false") {
@@ -60,17 +59,47 @@ $(document).ready(function(){
     })
   }
 
+//fix scroll
+var fix = $("#fix").height();
+var title = $(".title").height();
+var offset = fix + title;
+function scroll (){
+  var scroll_Top = $(window).scrollTop();
+
+  if( scroll_Top >= offset){
+    $("#fix").css({position: "fixed",
+                   top: "20px",
+                   right:"0px",
+                   opacity: ".5"
+                 });
+  }
+  else{
+    $("#fix").css({position: "relative",
+                   top: "",
+                   right:"",
+                   opacity: "1"
+                 });
+  }
+
+}
+$(window).scroll(scroll);
 
 $("#all").on("click", function(){
   Load(streams);
+  $("#all").css("background-color", "rgb(64, 196, 57)");
+  $("#online, #offline").css("background-color", "rgb(154, 12, 12)");
 })
 
 $("#online").on("click", function(){
   Load(streams, "true");
-})
+  $("#online").css("background-color", "rgb(64, 196, 57)");
+  $("#all, offline").css("background-color", "rgb(154, 12, 12)");
+;})
 
 $("#offline").on("click", function(){
   Load(streams, "false");
+  $("#offline").css("background-color", "rgb(64, 196, 57)");
+  $("#online, #all").css("background-color", "rgb(154, 12, 12)")
 })
 var match=[];
 $("#search").keyup(function(){

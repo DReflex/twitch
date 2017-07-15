@@ -56,13 +56,19 @@ button{
   border-radius: 20px;
   background-color: rgb(154, 12, 12);
   border: 2px solid rgb(180, 158, 11);
-  background-color: rgb(64, 196, 57);
 }
 .offline{
   color:rgb(148, 1, 1);
 }
 .offline img{
   filter: grayscale(100%);
+}
+#search{
+  border-radius: 10px;
+  border: 2px solid rgb(118, 25, 199);
+}
+#fix{
+  z-index:100;
 }
 @media screen and (max-width: 450px){
   .box{
