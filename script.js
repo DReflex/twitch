@@ -7,6 +7,7 @@ $(document).ready(function(){
       var channelURL = "https://api.twitch.tv/kraken/channels/" + channel;
       var streamURL = "https://api.twitch.tv/kraken/streams/" + channel;
       var status =" ";
+      var url = "https://www.twitch.tv/" + channel;
 
 
       $.ajax({
@@ -25,6 +26,8 @@ $(document).ready(function(){
             "Client-ID": "m2s1poxqgevvpxlm42lq0z07uzsqo0"
           },
           success: function(stream){
+            console.log(stream.url);
+
             var uStatus = user.status;
             var sStatus = stream.status;
             var image = '<img src="' + user.logo + '" alt="logo" class="img img-responsive">'
@@ -43,7 +46,7 @@ $(document).ready(function(){
             if(user.status == 404 || user.status == 422){
               image = '<img src="http://blog.archive.org/wp-content/uploads/2013/10/nomore404_l.png" alt"logo" class="img img-responsive">'
             }
-            $("#results").append('<div class= "'+ status + '">'+ image +'<br><p>'+ uStatus+ '</p><br><a  href="' + stream.url + '" target = "_blank"><p>'+ channel +'</p></a><hr></div>')
+            $("#results").append('<div class= "'+ status + '">'+ image +'<br><p>'+ uStatus+ '</p><br><a  href="' + url + '" target = "_blank"><p>'+ channel +'</p></a><hr></div>')
             if(bool == "true"){
               $(".offline").remove();
             }
